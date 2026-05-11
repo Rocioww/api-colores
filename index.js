@@ -169,13 +169,7 @@ servidor.listen(process.env.PORT);
 const express = require('express');
 const app = express();
 
-// ... tus rutas y conexión a mongo ...
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Servidor en puerto ${PORT}`));
 
-// ESTO ES LO QUE DEBES CAMBIAR:
-if (process.env.NODE_ENV !== 'production') {
-  const PORT = process.env.PORT || 3000;
-  app.listen(PORT, () => console.log(`Local en http://localhost:${PORT}`));
-}
-
-// ESTA LÍNEA ES OBLIGATORIA PARA VERCEL:
 module.exports = app;
