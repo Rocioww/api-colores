@@ -1,6 +1,9 @@
 import express from "express";
 import {leerColores,crearColor,borrarColor,actualizarColor}  from "./datos.js"
 
+import dns from "dns";
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
+
 const servidor = express();
 
 servidor.use(express.json());
